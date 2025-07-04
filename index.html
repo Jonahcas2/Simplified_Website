@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplified Site: YouTube</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SimplifiedYouTube</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Use stuff from other navbars -->
+                <ul class="navbar-nav me-auto">
+                    <li></li>
+                </ul>
+                <!-- Search button in Navbar related to future JavaScript function. 
+                 Here, I use what I already knew from previous courses, outside of the scape of the intro module. -->
+                <form class="d-flex" onsubmit="event.preventDefault(); searchVideo();">
+                    <input class="form-control me-2" type="search" placeholder="Search" id="searchInput">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+     <section class="bg-light text-center py-5">
+        <div class="container-fluid">
+            <h1 class="display-4">Welcome to YT Simplified!</h1>
+            <p class="lead">Watch, Upload, & More!</p>
+            <!-- Button that would lead to an interactive tutorial -->
+             <button class="btn btn-primary" onclick="showHeroAlert()">Show Me How</button>
+        </div>
+     </section>
+
+     <!-- Form Section -->
+      <section class="container-fluid my-5" id="uploadForm">
+        <h2>Upload a video</h2>
+        <!-- Upload video form. For now, just throws an alert like the others. -->
+         <div class="mb-3">
+            <label for="videoTitle" class="form-label">Video Title</label>
+            <input type="text" class="form-control" id="videoTitle" required>
+         </div>
+         <div class="mb-3">
+            <label for="videoURL" class="form-label">Video URL</label>
+            <input type="url" class="form-control" id="videoURL" required>
+         </div>
+         <button type="button" class="btn btn-success" onclick="submitForm()">Submit</button>
+      </section>
+
+      <!-- Table Section -->
+       <section>
+        <h2>Video Library</h2>
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>URL</th>
+                    <th>Play</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td>1</td>
+                    <td>Sample Video</td>
+                    <td>https://example.com/video1</td>
+                    <td><button class="btn btn-sm btn-primary" onclick="playVideo('Sample Video')">Play</button></td>
+                </tr>
+            </tbody>
+        </table>
+       </section>
+<script src="scripts.js"></script>
+</body>
+</html>
